@@ -1,36 +1,58 @@
 public class OOPSBannerApp {
-     public static void main(String args[]) { 
-		System.out.println(" ***   ***   *****   ***** ");
-        System.out.println("*   * *   * *     * *      ");
-        System.out.println("*   * *   * *     * *      ");
-        System.out.println("*   * *   * *****   ***** ");
-        System.out.println("*   * *   * *             ");
-        System.out.println("*   * *   * *             ");
-        System.out.println(" ***   ***   *        *****");
-		
-		System.out.println(String.join(" ", " *** ", " *** ", " ***** ", " ***** "));
-        System.out.println(String.join(" ", "*   *", "*   *", "*    *", "*     "));
-        System.out.println(String.join(" ", "*   *", "*   *", "*    *", "*     "));
-        System.out.println(String.join(" ", "*   *", "*   *", " *****", " *****"));
-        System.out.println(String.join(" ", "*   *", "*   *", "*     ", "     *"));
-        System.out.println(String.join(" ", "*   *", "*   *", "*     ", "*   *"));
-        System.out.println(String.join(" ", " *** ", " *** ", "*     ", " *****"));
-     
-	 
-	 
 
-        String[] lines = {
-            String.join(" ", "  ***  ", "  ***  ", " ****** ", "  ***** "),
-            String.join(" ", " **   ** ", " **   ** ", " **    ** ", " **     "),
-            String.join(" ", "**     **", "**     **", " **    ** ", " **     "),
-            String.join(" ", "**     **", "**     **", " ****** ", "  ***** "),
-            String.join(" ", "**     **", "**     **", " **      ", "       **"),
-            String.join(" ", " **   ** ", " **   ** ", " **      ", " **    **"),
-            String.join(" ", "  ***  ", "  ***  ", " **      ", "  ***** ")
+    // Method to generate O pattern
+    public static String[] getOPattern() {
+        return new String[]{
+                " *** ",
+                "*   *",
+                "*   *",
+                "*   *",
+                "*   *",
+                "*   *",
+                " *** "
         };
+    }
 
-        for (String line : lines) {
-            System.out.println(line);
+    // Method to generate P pattern
+    public static String[] getPPattern() {
+        return new String[]{
+                "***** ",
+                "*    *",
+                "*    *",
+                "***** ",
+                "*     ",
+                "*     ",
+                "*     "
+        };
+    }
+
+    // Method to generate S pattern
+    public static String[] getSPattern() {
+        return new String[]{
+                " *****",
+                "*     ",
+                "*     ",
+                " *****",
+                "     *",
+                "     *",
+                " *****"
+        };
+    }
+
+    // Main method (entry point of program)
+    public static void main(String[] args) {
+
+        String[] o = getOPattern();
+        String[] p = getPPattern();
+        String[] s = getSPattern();
+
+        for (int i = 0; i < o.length; i++) {
+            System.out.println(
+                    o[i] + "   " +
+                    o[i] + "   " +
+                    p[i] + "   " +
+                    s[i]
+            );
         }
-	}
+    }
 }
